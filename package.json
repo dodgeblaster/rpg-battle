@@ -1,0 +1,60 @@
+{
+    "name": "typescriptStarter",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "./node_modules/.bin/jest --watch",
+        "testCoverage": "./node_modules/.bin/jest --watch --coverage",
+        "watch": "tsc --watch --pretty",
+        "start": "nodemon ./dist/app.js"
+    },
+    "devDependencies": {
+        "ts-jest": "^21.1.4",
+        "tslint": "^5.8.0",
+        "typescript": "^2.4.0",
+        "@types/express": "^4.0.35",
+        "@types/jest": "^21.1.5",
+        "@types/node": "^7.0.12"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "jest": {
+        "globals": {
+            "ts-jest": {
+                "tsConfigFile": "tsconfig.json"
+            }
+        },
+        "moduleFileExtensions": [
+            "ts",
+            "js"
+        ],
+        "collectCoverageFrom": [
+            "src/**/*.ts",
+            "!<rootDir>/node_modules/"
+        ],
+        "coverageThreshold": {
+            "global": {
+                "branches": 90,
+                "functions": 90,
+                "lines": 90,
+                "statements": 90
+            }
+        },
+        "collectCoverage": true,
+        "coverageReporters": [
+            "text",
+            "html"
+        ],
+        "mapCoverage": true,
+        "transform": {
+            "^.+\\.(ts|tsx)$": "./node_modules/ts-jest/preprocessor.js"
+        },
+        "testMatch": [
+            "**/__tests__/**/*.ts?(x)",
+            "**/?(*.)(spec|test).ts?(x)"
+        ],
+        "testEnvironment": "node"
+    }
+}
