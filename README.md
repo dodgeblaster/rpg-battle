@@ -1,8 +1,8 @@
 ## Battle Service
 
 #### functions (input):
-    - init
     - inputCommand
+    - inputEnemyCommand
 
 #### events (output):
     - partyMemberHasTurn
