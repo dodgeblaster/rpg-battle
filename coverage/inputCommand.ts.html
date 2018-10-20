@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for inputCommand.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> inputCommand.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/52</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/50</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { startATB } from './utils'</span>
+&nbsp;
+const areAllEnemiesGone = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >enemies =&gt;</span> {</span>
+    const alive = <span class="cstat-no" title="statement not covered" >enemies.filter(<span class="fstat-no" title="function not covered" >x =&gt; <span class="cstat-no" title="statement not covered" ></span>x.hp &gt; 0)</span></span>
+<span class="cstat-no" title="statement not covered" >    return alive.length === 0</span>
+}
+&nbsp;
+const areAllTeammatesGone = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >party =&gt;</span> {</span>
+    const alive = <span class="cstat-no" title="statement not covered" >party.filter(<span class="fstat-no" title="function not covered" >x =&gt; <span class="cstat-no" title="statement not covered" ></span>x.hp &gt; 0)</span></span>
+<span class="cstat-no" title="statement not covered" >    return alive.length === 0</span>
+}
+&nbsp;
+const checkIfBattleIsOver = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(s</span>tate, emit) =&gt; {</span>
+    const battleFinished = <span class="cstat-no" title="statement not covered" >areAllEnemiesGone(state.enemies)</span>
+    const gameOver = <span class="cstat-no" title="statement not covered" >areAllTeammatesGone(state.party)</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (battleFinished) {</span>
+<span class="cstat-no" title="statement not covered" >        emit.battleFinished(state)</span>
+<span class="cstat-no" title="statement not covered" >        return true</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (gameOver) {</span>
+<span class="cstat-no" title="statement not covered" >        emit.gameOver()</span>
+<span class="cstat-no" title="statement not covered" >        return true</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return false</span>
+}
+&nbsp;
+const commitAction = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(c</span>ommand, state) =&gt; {</span>
+    const isAttackOnEnemy = <span class="cstat-no" title="statement not covered" >command.type === 'attack' &amp;&amp; command.targetType === 'enemy'</span>
+    const isAttackOnParty = <span class="cstat-no" title="statement not covered" >command.type === 'attack' &amp;&amp; command.targetType === 'party'</span>
+    const isHealOnParty = <span class="cstat-no" title="statement not covered" >command.type === 'heal' &amp;&amp; command.targetType === 'party'</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (isAttackOnEnemy) {</span>
+<span class="cstat-no" title="statement not covered" >        state.enemies[command.targetId].hp = state.enemies[command.targetId].hp - command.value</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (isAttackOnParty) {</span>
+<span class="cstat-no" title="statement not covered" >        state.party[command.targetId].hp = state.party[command.targetId].hp - command.value</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (isHealOnParty) {</span>
+<span class="cstat-no" title="statement not covered" >        state.party[command.targetId].hp = state.party[command.targetId].hp + command.value</span>
+    }
+}
+&nbsp;
+const emitActionResults = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(c</span>ommand, state, emit) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    if (command.targetType === 'party') {</span>
+<span class="cstat-no" title="statement not covered" >        emit.partyMemberStatHasChanged({</span>
+            member: command.targetId,
+            hp: state.party[command.targetId]
+        })
+    } else {
+<span class="cstat-no" title="statement not covered" >        emit.enemyStatHasChanged({</span>
+            id: command.targetId,
+            hp: state.enemies[command.targetId]
+        })
+    }
+}
+&nbsp;
+export const <span class="cstat-no" title="statement not covered" >partyMemberAction = <span class="fstat-no" title="function not covered" >(c</span>ommand, state, emit) =&gt; {</span>
+    // apply author basic level stats to action
+    // apply author equipment stats to action
+    // apply author status to action (elemntal, blind, haste, protect)
+&nbsp;
+&nbsp;
+    // apply target basic level stats to action
+    // apply target equipment stats to action
+    // apply target status to action (elemntal, blind, haste, protect)
+&nbsp;
+    // commit action
+<span class="cstat-no" title="statement not covered" >    commitAction(command, state)</span>
+&nbsp;
+    // emit action results
+<span class="cstat-no" title="statement not covered" >    emitActionResults(command, state, emit)</span>
+  
+    // check if battle is over
+    const isBattleOver = <span class="cstat-no" title="statement not covered" >checkIfBattleIsOver(state, emit)</span>
+<span class="cstat-no" title="statement not covered" >    if (isBattleOver) {</span>
+<span class="cstat-no" title="statement not covered" >        state = false</span>
+<span class="cstat-no" title="statement not covered" >        return</span>
+    }
+&nbsp;
+    // set timer
+<span class="cstat-no" title="statement not covered" >    startATB({</span>
+        type: 'party',
+        id: command.authorId
+    }, emit, 'instant')
+}
+&nbsp;
+&nbsp;
+&nbsp;
+const selectRandomEnemyAction = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(i</span>d, state) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return state.enemies[id].actions[0]</span>
+}
+&nbsp;
+export const <span class="cstat-no" title="statement not covered" >enemyAction = <span class="fstat-no" title="function not covered" >(c</span>ommand, state, emit) =&gt; {</span>
+    const action = <span class="cstat-no" title="statement not covered" >command.action === 'random'</span>
+        ? selectRandomEnemyAction(command.authorId, state)
+        : command.action
+&nbsp;
+    // apply author basic level stats to action
+    // apply author equipment stats to action
+    // apply author status to action (elemntal, blind, haste, protect)
+&nbsp;
+&nbsp;
+    // apply target basic level stats to action
+    // apply target equipment stats to action
+    // apply target status to action (elemntal, blind, haste, protect)
+&nbsp;
+    // commit actions
+<span class="cstat-no" title="statement not covered" >    commitAction(command, state)</span>
+   
+    // emit action results
+<span class="cstat-no" title="statement not covered" >    emitActionResults(command, state, emit)</span>
+&nbsp;
+    // check if battle is over
+    const isBattleOver = <span class="cstat-no" title="statement not covered" >checkIfBattleIsOver(state, emit)</span>
+<span class="cstat-no" title="statement not covered" >    if (isBattleOver) {</span>
+<span class="cstat-no" title="statement not covered" >        state = false</span>
+<span class="cstat-no" title="statement not covered" >        return</span>
+    }
+&nbsp;
+    // set timer
+<span class="cstat-no" title="statement not covered" >    startATB({</span>
+        type: 'enemy',
+        id: command.authorId
+    }, emit, 'instant')
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 19 2018 23:23:53 GMT-0600 (MDT)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>
