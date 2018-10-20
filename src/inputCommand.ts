@@ -1,18 +1,14 @@
 import { startATB } from './utils'
 
-const areAllEnemiesGone = enemies => {
-    const alive = enemies.filter(x => x.hp > 0)
+export const areAllMembersGone = enemies => {
+
+    const alive = Object.keys(enemies).filter(k => enemies[k].hp > 0)
     return alive.length === 0
 }
 
-const areAllTeammatesGone = party => {
-    const alive = party.filter(x => x.hp > 0)
-    return alive.length === 0
-}
-
-const checkIfBattleIsOver = (state, emit) => {
-    const battleFinished = areAllEnemiesGone(state.enemies)
-    const gameOver = areAllTeammatesGone(state.party)
+export const checkIfBattleIsOver = (state, emit) => {
+    const battleFinished = areAllMembersGone(state.enemies)
+    const gameOver = areAllMembersGone(state.party)
 
     if (battleFinished) {
         emit.battleFinished(state)
@@ -27,7 +23,7 @@ const checkIfBattleIsOver = (state, emit) => {
     return false
 }
 
-const commitAction = (command, state) => {
+export const commitAction = (command, state) => {
     const isAttackOnEnemy = command.type === 'attack' && command.targetType === 'enemy'
     const isAttackOnParty = command.type === 'attack' && command.targetType === 'party'
     const isHealOnParty = command.type === 'heal' && command.targetType === 'party'
@@ -42,19 +38,22 @@ const commitAction = (command, state) => {
 
     if (isHealOnParty) {
         state.party[command.targetId].hp = state.party[command.targetId].hp + command.value
+        if (state.party[command.targetId].hp > state.party[command.targetId].maxHp) {
+            state.party[command.targetId].hp = state.party[command.targetId].maxHp
+        }
     }
 }
 
-const emitActionResults = (command, state, emit) => {
+export const emitActionResults = (command, state, emit) => {
     if (command.targetType === 'party') {
         emit.partyMemberStatHasChanged({
-            member: command.targetId,
-            hp: state.party[command.targetId]
+            id: command.targetId,
+            hp: state.party[command.targetId].hp
         })
     } else {
         emit.enemyStatHasChanged({
             id: command.targetId,
-            hp: state.enemies[command.targetId]
+            hp: state.enemies[command.targetId].hp
         })
     }
 }
@@ -127,4 +126,9 @@ export const enemyAction = (command, state, emit) => {
         type: 'enemy',
         id: command.authorId
     }, emit, 'instant')
+}
+
+export default {
+    partyMemberAction,
+    enemyAction
 }

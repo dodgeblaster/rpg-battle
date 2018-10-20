@@ -17,8 +17,9 @@ export default (input:StartBattleInput) => {
         battleFinished          : x => input.eventEmitter('battle-finished', x),
         partyMemberHasTurn      : x => input.eventEmitter('party-member-has-turn', x),
         enemyHasTurn            : x => input.eventEmitter('enemy-has-turn', x),
-        partyMemberStatHasChanged   : x => input.eventEmitter('party-member-stat-has-changed', x),
-        gameOver                : x => input.eventEmitter('game-over',)
+        partyMemberStatHasChanged : x => input.eventEmitter('party-member-stat-has-changed', x),
+        enemyStatHasChanged     : x => input.eventEmitter('enemy-stat-has-changed', x),
+        gameOver                : x => input.eventEmitter('game-over')
     }
 
     initializeState({
@@ -26,7 +27,12 @@ export default (input:StartBattleInput) => {
         enemies: input.enemies
     })
 
-    startEveryonesATB(input.party, input.enemies, emit, input.speed)
+    startEveryonesATB(
+        Object.keys(input.party).map(k => input.party[k]), 
+        Object.keys(input.enemies).map(k => input.enemies[k]), 
+        emit, 
+        input.speed
+    )
 
     return {
         inputCommand: x => {
